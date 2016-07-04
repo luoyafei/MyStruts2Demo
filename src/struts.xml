@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+          "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="default" extends="struts-default" namespace="/">
+    	
+    	<global-results>
+    		<result name="exception">/exception.jsp</result>
+    	</global-results>
+    
+       <action name="mylogin" class="com.struts.action.MyAction">
+            <result name="success">/success.jsp</result>
+            <result name="input">/success.jsp</result>
+            <result name="none">/register.jsp</result>
+            <!-- <result name="register">/register.jsp</result>
+            <result type="redirect" name="redirect">
+            	<param name="location">/exception.jsp</param>
+            	<param name="username">${username}</param>
+            	<param name="password">${password}</param>
+            </result> -->
+        </action>
+        
+    </package>
+</struts>
+
