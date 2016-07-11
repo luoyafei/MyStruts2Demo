@@ -3,13 +3,15 @@
           "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
           "http://struts.apache.org/dtds/struts-2.0.dtd">
 <struts>
+	
+	<constant name="struts.devMode" value="true"/>
     <package name="default" extends="struts-default" namespace="/">
-    	
+
     	<global-results>
     		<result name="exception">/exception.jsp</result>
     	</global-results>
-    
        <action name="mylogin" class="com.struts.action.MyAction">
+       		<result name="null">/demo.jsp</result>
             <result name="success">/success.jsp</result>
             <result name="input">/success.jsp</result>
             <result name="none">/register.jsp</result>

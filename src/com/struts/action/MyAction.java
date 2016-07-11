@@ -38,8 +38,8 @@ public class MyAction extends ActionSupport {
 	@Override
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
-		
-		if(userName != null && password != null) {
+System.out.println("这里是接受过来的值：" + userName + ":" + password);
+		if(userName.trim().hashCode() != 0 && password.trim().hashCode() != 0) {
 			User user = new User();
 			user.setUserName(userName);
 			user.setPassword(password);
@@ -53,8 +53,12 @@ public class MyAction extends ActionSupport {
 			session.save(user);
 			
 			session.getTransaction().commit();
+			
+			return SUCCESS;
+		} else {
+System.out.println("用户输入了空白值！");
+			return new String("null");
 		}
-		return SUCCESS;
 	}
 	
 	public String validation() {

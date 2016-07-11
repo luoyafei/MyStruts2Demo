@@ -1,9 +1,13 @@
 package com.struts.bean;
 
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.IdClass;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 
 /* 
@@ -21,12 +25,21 @@ import javax.persistence.SequenceGenerator;
  */
 @Entity
 @SequenceGenerator(name="userSEQ", sequenceName="userSEQ_DB")
+@IdClass(value=UserUK.class)
 public class User {
 
 	private int userId = 0;
 	private String userName = "游客";
 	private String password = "12345";
-	
+	private Wife wife;
+	@OneToOne
+	@JoinColumn(name="wifeId")
+	public Wife getWife() {
+		return wife;
+	}
+	public void setWife(Wife wife) {
+		this.wife = wife;
+	}
 	@Id
 	@GeneratedValue(generator="userSEQ", strategy=GenerationType.AUTO)
 	public int getUserId() {
@@ -35,6 +48,7 @@ public class User {
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
+	@Id
 	public String getUserName() {
 		return userName;
 	}

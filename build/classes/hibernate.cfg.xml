@@ -27,13 +27,15 @@
 
         <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
-        <property name="format_sql"></property>
+        <property name="format_sql">true</property>
 
         <!-- Drop and re-create the database schema on startup -->
+        <property name="hbm2ddl.auto">create</property>
         <property name="hbm2ddl.auto">update</property>
 
         <!-- <mapping resource="com/struts/bean/User.hbm.xml"/> -->
         <mapping class="com.struts.bean.User"></mapping>
+        <mapping class="com.struts.bean.Wife"></mapping>
 
     </session-factory>
 
