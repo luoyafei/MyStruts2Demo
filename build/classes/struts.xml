@@ -6,7 +6,10 @@
 	
 	<constant name="struts.devMode" value="true"/>
     <package name="default" extends="struts-default" namespace="/">
-
+		<interceptors>
+			<interceptor name="myInterceptor" class="com.struts.Interceptor.MyInterceptor"></interceptor>
+		</interceptors>
+		
     	<!-- <global-results>
     		<result name="exception">/exception.jsp</result>
     	</global-results> -->
@@ -14,6 +17,8 @@
             <result name="success">/success.jsp</result>
             <result name="input">/register.jsp</result>
             <result name="error">/index.jsp</result>
+            <interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="myInterceptor"></interceptor-ref>
             <!-- <result type="redirectAction" name="success2">
             	<param name="actionName">mylogin!redirectActionDemo</param>
             	<param name="userName">${userName}</param>
@@ -26,6 +31,8 @@
             	<param name="password">${password}</param>
             </result> -->
         </action>
+        
+        
         
     </package>
 </struts>

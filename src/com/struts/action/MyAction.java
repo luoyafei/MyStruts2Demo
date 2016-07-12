@@ -3,6 +3,7 @@ package com.struts.action;
 import java.util.List;
 
 import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
@@ -44,6 +45,11 @@ public class MyAction extends ActionSupport {
 	@Override
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
+/*
+		HttpServletRequest request = ServletActionContext.getRequest();
+		userName = request.getParameter("userName");
+		password = request.getParameter("password");*/
+
 System.out.println("这里是接受过来的值：" + userName + ":" + password);
 		if(userName.trim().hashCode() != 0 && password.trim().hashCode() != 0) {
 			
