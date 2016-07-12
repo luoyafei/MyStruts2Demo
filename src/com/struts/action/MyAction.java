@@ -3,6 +3,7 @@ package com.struts.action;
 import java.util.List;
 
 import javax.servlet.ServletContext;
+import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
 import org.hibernate.Query;
@@ -59,8 +60,11 @@ System.out.println("这里是接受过来的值：" + userName + ":" + password)
 			
 			if(users.size() >= 1) {
 				for(int i = 0; i < users.size(); i++) {
-					if(users.get(i).getPassword().equals(password))
+					if(users.get(i).getPassword().equals(password)) {
+						ServletContext application = ServletActionContext.getServletContext();
+						application.setAttribute("user", users.get(i));
 						return SUCCESS;
+					}
 				}
 				return INPUT;
 			} else
@@ -73,6 +77,15 @@ System.out.println("用户输入了空白值！");
 	
 	public String reg() {
 		return INPUT;
+	}
+	
+	public String rrdir() {
+		return "success2";
+	}
+	
+	
+	public String redirectActionDemo() {
+		return "success";
 	}
 	
 	public String validation() throws Exception {
@@ -94,6 +107,8 @@ System.out.println("这里是接受过来的值：" + userName + ":" + password)
 			
 			ServletContext application = ServletActionContext.getServletContext();
 			application.setAttribute("user", u);
+			HttpSession hsession = ServletActionContext.getRequest().getSession();
+			hsession.setAttribute("user", u);
 			
 			return SUCCESS;
 		} else

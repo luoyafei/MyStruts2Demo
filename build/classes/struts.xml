@@ -7,13 +7,18 @@
 	<constant name="struts.devMode" value="true"/>
     <package name="default" extends="struts-default" namespace="/">
 
-    	<global-results>
+    	<!-- <global-results>
     		<result name="exception">/exception.jsp</result>
-    	</global-results>
+    	</global-results> -->
        <action name="mylogin" class="com.struts.action.MyAction">
             <result name="success">/success.jsp</result>
             <result name="input">/register.jsp</result>
             <result name="error">/index.jsp</result>
+            <!-- <result type="redirectAction" name="success2">
+            	<param name="actionName">mylogin!redirectActionDemo</param>
+            	<param name="userName">${userName}</param>
+            	<param name="password">${password}</param>
+            </result> -->
             <!-- 
             <result type="redirect" name="redirect">
             	<param name="location">/exception.jsp</param>
