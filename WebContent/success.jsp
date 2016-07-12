@@ -9,8 +9,8 @@
 </head>
 <body>
 	<s:div>
-		<s:property value="userName" />
-		<s:property value="password" />
+		<s:property value="#application.user.userName" />
+		<s:property value="#application.user.password" />
 	</s:div>
 </body>
 </html>

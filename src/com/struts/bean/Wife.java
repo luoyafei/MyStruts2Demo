@@ -9,8 +9,8 @@ import javax.persistence.OneToOne;
 @Entity
 public class Wife {
 
-	private int wifeId;
-	private String wifeName;
+	private int wifeId = 0;
+	private String wifeName = "隔壁老王";
 	private User user;
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)

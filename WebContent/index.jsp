@@ -13,6 +13,6 @@
 		<s:password name="password" label="密码" />
 		<s:submit value="提交" />
 	</s:form>
-	<s:a href="register.jsp">注册</s:a>
+	<s:a href="mylogin!reg">注册</s:a>
 </body>
 </html>

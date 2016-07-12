@@ -11,11 +11,10 @@
     		<result name="exception">/exception.jsp</result>
     	</global-results>
        <action name="mylogin" class="com.struts.action.MyAction">
-       		<result name="null">/demo.jsp</result>
             <result name="success">/success.jsp</result>
-            <result name="input">/success.jsp</result>
-            <result name="none">/register.jsp</result>
-            <!-- <result name="register">/register.jsp</result>
+            <result name="input">/register.jsp</result>
+            <result name="error">/index.jsp</result>
+            <!-- 
             <result type="redirect" name="redirect">
             	<param name="location">/exception.jsp</param>
             	<param name="username">${username}</param>

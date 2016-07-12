@@ -16,10 +16,6 @@ public class TestHibernate {
 		Session session = sf.getCurrentSession();
 		session.beginTransaction();
 		
-		//User u = new User();
-		/*u.setUserName("咯啊运费");
-		u.setPassword("ksdjfklsj");*/
-		//u.setUserId(9);
 		
 		new SchemaExport(new AnnotationConfiguration().configure()).create(true, true);;
 		
