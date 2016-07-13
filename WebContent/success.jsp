@@ -9,8 +9,9 @@
 </head>
 <body>
 	<s:div>
-		<s:property value="#application.user.userName" />
-		<s:property value="#application.user.password" />
+		welcome to this page ! success.jsp
+		<s:property value="userName" />
+		<s:property value="password" />
 	</s:div>
 </body>
 </html>

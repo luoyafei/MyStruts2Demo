@@ -45,10 +45,10 @@ public class MyAction extends ActionSupport {
 	@Override
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
-/*
+
 		HttpServletRequest request = ServletActionContext.getRequest();
 		userName = request.getParameter("userName");
-		password = request.getParameter("password");*/
+		password = request.getParameter("password");
 
 System.out.println("这里是接受过来的值：" + userName + ":" + password);
 		if(userName.trim().hashCode() != 0 && password.trim().hashCode() != 0) {
@@ -72,9 +72,9 @@ System.out.println("这里是接受过来的值：" + userName + ":" + password)
 						return SUCCESS;
 					}
 				}
-				return INPUT;
+				return ERROR;
 			} else
-				return INPUT;
+				return ERROR;
 		} else {
 System.out.println("用户输入了空白值！");
 			return ERROR;
@@ -82,7 +82,7 @@ System.out.println("用户输入了空白值！");
 	}
 	
 	public String reg() {
-		return INPUT;
+		return SUCCESS;
 	}
 	
 	public String rrdir() {

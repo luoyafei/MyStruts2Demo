@@ -6,10 +6,25 @@
 	
 	<constant name="struts.devMode" value="true"/>
     <package name="default" extends="struts-default" namespace="/">
+		
+		<!--
+		拦截器的定义 
 		<interceptors>
 			<interceptor name="myInterceptor" class="com.struts.Interceptor.MyInterceptor"></interceptor>
 		</interceptors>
-		
+		 -->
+		 
+		 <interceptors>
+		 	<!--拦截器的定义--> 
+		 	<interceptor name="myInterceptor" class="com.struts.Interceptor.MyInterceptor" />
+		 	<interceptor name="myInterceptor1" class="com.struts.Interceptor.MyInterceptor" />
+		 	<interceptor name="myInterceptor2" class="com.struts.Interceptor.MyInterceptor" />
+		 	 <!-- 拦截栈的定义 -->
+		 	<interceptor-stack name="myInterceptorStack">
+		 		<interceptor-ref name="defaultStack" />
+		 		<interceptor-ref name="myInterceptor" />
+		 	</interceptor-stack>
+		 </interceptors>
     	<!-- <global-results>
     		<result name="exception">/exception.jsp</result>
     	</global-results> -->
@@ -17,8 +32,21 @@
             <result name="success">/success.jsp</result>
             <result name="input">/register.jsp</result>
             <result name="error">/index.jsp</result>
-            <interceptor-ref name="defaultStack"/>
-            <interceptor-ref name="myInterceptor"></interceptor-ref>
+            
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+		 	<interceptor-ref name="myInterceptor">
+		 		<param name="sign">1</param>
+		 	</interceptor-ref>
+		 	<interceptor-ref name="myInterceptor1">
+		 		<param name="sign">2</param>
+		 	</interceptor-ref>
+		 	<interceptor-ref name="myInterceptor2">
+		 		<param name="sign">3</param>
+		 	</interceptor-ref>
+          <!--   <interceptor-ref name="myInterceptorStack"></interceptor-ref> -->
+            
+            <!-- <interceptor-ref name="defaultStack"/>
+            <interceptor-ref name="myInterceptor"></interceptor-ref> -->
             <!-- <result type="redirectAction" name="success2">
             	<param name="actionName">mylogin!redirectActionDemo</param>
             	<param name="userName">${userName}</param>
