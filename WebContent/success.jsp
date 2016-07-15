@@ -10,8 +10,8 @@
 <body>
 	<s:div>
 		welcome to this page ! success.jsp
-		<s:property value="userName" />
-		<s:property value="password" />
+		<s:property value="user.userName" />
+		<s:property value="user.password" />
 	</s:div>
 </body>
 </html>

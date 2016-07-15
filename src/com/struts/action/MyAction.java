@@ -3,7 +3,6 @@ package com.struts.action;
 import java.util.List;
 
 import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.apache.struts2.ServletActionContext;
@@ -15,13 +14,25 @@ import org.hibernate.cfg.Configuration;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.struts.bean.User;
+import com.struts.bean.UserDTO;
 /**
  * 测试struts2的一个action
  * @author Diamond
  */
 public class MyAction extends ActionSupport {
 	
-	private int userId;
+	
+	private UserDTO user;
+
+	public UserDTO getUser() {
+		return user;
+	}
+
+	public void setUser(UserDTO user) {
+		this.user = user;
+	}
+
+	/*private int userId;
 	private String userName;
 	private String password;
 	public int getUserId() {
@@ -41,15 +52,16 @@ public class MyAction extends ActionSupport {
 	}
 	public void setPassword(String password) {
 		this.password = password;
-	}
+	}*/
 	@Override
 	public String execute() throws Exception {
 		// TODO Auto-generated method stub
 
-		HttpServletRequest request = ServletActionContext.getRequest();
-		userName = request.getParameter("userName");
-		password = request.getParameter("password");
-
+		//HttpServletRequest request = ServletActionContext.getRequest();
+		//userName = request.getParameter("userName");
+		//password = request.getParameter("password");
+		String userName = user.getUserName();
+		String password = user.getPassword();
 System.out.println("这里是接受过来的值：" + userName + ":" + password);
 		if(userName.trim().hashCode() != 0 && password.trim().hashCode() != 0) {
 			
@@ -82,7 +94,9 @@ System.out.println("用户输入了空白值！");
 	}
 	
 	public String reg() {
-		return SUCCESS;
+		String address = ServletActionContext.getRequest().getRemoteAddr();
+System.out.println("访问者的IP:" + address);
+		return INPUT;
 	}
 	
 	public String rrdir() {
@@ -96,6 +110,8 @@ System.out.println("用户输入了空白值！");
 	
 	public String validation() throws Exception {
 		
+		String userName = user.getUserName();
+		String password = user.getPassword();
 System.out.println("这里是接受过来的值：" + userName + ":" + password);
 		if(userName.trim().hashCode() != 0 && password.trim().hashCode() != 0) {
 			User u = new User();

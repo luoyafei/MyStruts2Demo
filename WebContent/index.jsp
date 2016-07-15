@@ -26,8 +26,8 @@
 	%>
 	
 	<s:form action="mylogin" method="post" namespace="/">
-		<s:textfield name="userName" label="用户名" />
-		<s:password name="password" label="密码" />
+		<s:textfield name="user.userName" label="用户名" />
+		<s:password name="user.password" label="密码" />
 		<s:submit value="提交" />
 	</s:form>
 	<s:a href="mylogin!reg">注册</s:a>
