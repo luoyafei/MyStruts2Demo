@@ -22,6 +22,7 @@ import com.struts.bean.UserDTO;
 public class MyAction extends ActionSupport {
 	
 	
+
 	private UserDTO user;
 
 	public UserDTO getUser() {
@@ -99,7 +100,15 @@ System.out.println("访问者的IP:" + address);
 		return INPUT;
 	}
 	
+	public String exception() {
+		return "exception";
+	}
+	
 	public String rrdir() {
+		this.addFieldError("user", "userName error");
+		this.addActionError("action error");
+		this.addFieldError("user", "名字太长");
+		this.addActionMessage("action message");
 		return "success2";
 	}
 	

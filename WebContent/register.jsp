@@ -13,5 +13,9 @@
 		<s:password name="password" label="password" />
 		<s:submit value="提交" />
 	</s:form>
+	<%-- <s>
+		<s:property value="user.inputSomeThing()"/>
+	</s> --%>
+	<s:debug></s:debug>
 </body>
 </html>

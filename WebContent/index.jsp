@@ -31,5 +31,6 @@
 		<s:submit value="提交" />
 	</s:form>
 	<s:a href="mylogin!reg">注册</s:a>
+	<s:a href="mylogin!rrdir">测试debug</s:a>
 </body>
 </html>

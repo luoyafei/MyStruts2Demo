@@ -11,7 +11,12 @@
 	<s:div>
 		welcome to this page ! success.jsp
 		<s:property value="user.userName" />
-		<s:property value="user.password" />
+		<s:property value="#action.user.password" />
 	</s:div>
+	<s>
+		<%-- <s:property value="user.inputSomeThing()"/> --%>
+		<s:property value="@com.struts.bean.UserDTO@myNames()"/>
+	</s>
+	<s:debug></s:debug>
 </body>
 </html>

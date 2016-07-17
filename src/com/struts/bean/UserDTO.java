@@ -16,4 +16,15 @@ public class UserDTO {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	
+	public static String myName = "咯亚非";
+	
+	public static String myNames() {
+System.out.println("there is myName() ");
+		return "There is myName()";
+	}
+	public String inputSomeThing() {
+		System.out.println("i am input!");
+		return "input";
+	}
 }

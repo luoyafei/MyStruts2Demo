@@ -9,9 +9,16 @@
 </head>
 <body>
 	<strong>
-		<s:div>
-		<s:property value="#application.user.userName" />
-		<s:property value="password" />
+	<s:div>
+		<%-- <s:property value="#application.user.userName" />
+		<s:property value="password" /> --%>
+		<s:fielderror></s:fielderror>
+		<br />
+		<s:property value="#request"/>
+		
+		<s:property value="errors.user[0]"/>
+		<s:property value="errors.user[1]"/>
+		<s:debug></s:debug>
 	</s:div>
 	</strong>
 </body>
