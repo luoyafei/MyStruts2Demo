@@ -32,5 +32,6 @@
 	</s:form>
 	<s:a href="mylogin!reg">注册</s:a>
 	<s:a href="mylogin!rrdir">测试debug</s:a>
+	<s:a href="mylogin!ognl">测试OGNL</s:a>
 </body>
 </html>

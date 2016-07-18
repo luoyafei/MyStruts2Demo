@@ -1,6 +1,11 @@
 package com.struts.action;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
@@ -13,6 +18,9 @@ import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.cfg.Configuration;
 
 import com.opensymphony.xwork2.ActionSupport;
+import com.struts.bean.Cat;
+import com.struts.bean.Cattle;
+import com.struts.bean.Dog;
 import com.struts.bean.User;
 import com.struts.bean.UserDTO;
 /**
@@ -31,6 +39,49 @@ public class MyAction extends ActionSupport {
 
 	public void setUser(UserDTO user) {
 		this.user = user;
+	}
+
+	List<Cattle> cattles = new ArrayList<Cattle>();
+	Set<Cat> cats = new HashSet<Cat>();
+	Map<String, Dog> dogs = new HashMap<String, Dog>();
+	
+	public List<Cattle> getCattles() {
+		return cattles;
+	}
+
+	public void setCattles(List<Cattle> cattles) {
+		this.cattles = cattles;
+	}
+
+	public Set<Cat> getCats() {
+		return cats;
+	}
+
+	public void setCats(Set<Cat> cats) {
+		this.cats = cats;
+	}
+
+	public Map<String, Dog> getDogs() {
+		return dogs;
+	}
+
+	public void setDogs(Map<String, Dog> dogs) {
+		this.dogs = dogs;
+	}
+	
+	
+	public MyAction() {
+		cattles.add(new Cattle("cattle1", 1));
+		cattles.add(new Cattle("cattle2", 2));
+		cattles.add(new Cattle("cattle3", 3));
+		
+		cats.add(new Cat("cat1", 1));
+		cats.add(new Cat("cat2", 2));
+		cats.add(new Cat("cat3", 3));
+		
+		dogs.put("dog1", new Dog("dog1", 1));
+		dogs.put("dog2", new Dog("dog2", 2));
+		dogs.put("dog3", new Dog("dog3", 3));
 	}
 
 	/*private int userId;
@@ -92,6 +143,10 @@ System.out.println("这里是接受过来的值：" + userName + ":" + password)
 System.out.println("用户输入了空白值！");
 			return ERROR;
 		}
+	}
+	
+	public String ognl() {
+		return "ognl";
 	}
 	
 	public String reg() {

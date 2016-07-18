@@ -50,6 +50,7 @@
             <result name="input">/register.jsp</result>
             <result name="error">/index.jsp</result>
             <result name="success2">/demo.jsp</result>
+            <result name="ognl">/ognl.jsp</result>
             
             <!--  <result name="input" type="chain">
             	<param name="actionName">mylogin</param>
