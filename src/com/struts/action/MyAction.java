@@ -159,6 +159,10 @@ System.out.println("访问者的IP:" + address);
 		return "exception";
 	}
 	
+	public String tags() {
+		return "tags";
+	}
+	
 	public String rrdir() {
 		this.addFieldError("user", "userName error");
 		this.addActionError("action error");

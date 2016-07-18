@@ -4,9 +4,8 @@ public class Cat {
 
 	private String name;
 	private int age;
-	
+	public Cat() {}
 	public Cat(String name, int age) {
-		super();
 		this.name = name;
 		this.age = age;
 	}

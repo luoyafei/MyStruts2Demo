@@ -33,5 +33,13 @@
 	<s:a href="mylogin!reg">注册</s:a>
 	<s:a href="mylogin!rrdir">测试debug</s:a>
 	<s:a href="mylogin!ognl">测试OGNL</s:a>
+	
+	
+	<s:form action="mylogin!tags" method="post" namespace="/">
+		<s:textfield name="user.userName" label="用户名" />
+		<s:password name="user.password" label="密码" />
+		<s:submit value="测试tags" />
+	</s:form>
+	
 </body>
 </html>
