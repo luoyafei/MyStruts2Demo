@@ -25,6 +25,39 @@
 			<s:param name="age" value="22"></s:param>
 		</s:bean>
 	`	<s:property value="#myCat"/>
+	
+		<hr/>
+		<br />
+		使用if elseif else
+		age值：<s:property value="#parameters.age[0]" />
+		<s:set var="age" value="#parameters.age[0]" />
+		<s:if test="#parameters.age[0] < 0">wrong age!</s:if>
+		<s:elseif test="#parameters.age[0] < 20"> too young!</s:elseif>
+		<s:else>false</s:else>
+		
+		<hr/>
+		<br/>
+		使用s:iterator
+		<s:iterator value="{1,2,3,4}">
+			<s:property />
+		</s:iterator>
+		<br/>
+		<s:iterator value="{'aaa','ccc','bbb'}" var="x">
+			<s:property value="#x.toUpperCase()" />
+		</s:iterator>
+		<br/>
+		<s:iterator value="{'aa','bb','cc','dd'}" status="status">
+			<s:property value="#status.index" />
+		</s:iterator>
+		<br/>
+		<s:iterator value="#{1:'a',2:'b',3:'c'}">
+			<s:property  value="key"/>|<s:property value="value"/>
+		</s:iterator>
+		<br/>
+		<s:iterator value="#{1:'a',2:'b',3:'c'}" var="x">
+			<s:property value="#x.key"/>|<s:property value="#x.value"/>
+		</s:iterator>
+		
 		<s:debug></s:debug>
 	</s:div>
 	</strong>
