@@ -34,8 +34,14 @@
         <property name="hbm2ddl.auto">update</property>
 
         <!-- <mapping resource="com/struts/bean/User.hbm.xml"/> -->
-        <mapping class="com.struts.bean.User"></mapping>
-        <mapping class="com.struts.bean.Wife"></mapping>
+       <!--  <mapping class="com.struts.bean.User"></mapping>
+        <mapping class="com.struts.bean.Wife"></mapping> -->
+        
+        <!-- <mapping class="com.struts.bean.Category"></mapping>
+        <mapping class="com.struts.bean.Topic"></mapping>
+        <mapping class="com.struts.bean.Msg"></mapping> -->
+        
+        <mapping class="com.struts.bean.TUuid"></mapping>
 
     </session-factory>
 
